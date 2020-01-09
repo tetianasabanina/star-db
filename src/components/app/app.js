@@ -8,6 +8,14 @@ import ErrorBoundry from '../error-boundry';
 import Row from '../row';
 import ItemDetails, { Record } from '../item-details/item-details';
 import ItemList from '../item-list';
+import { 
+  PersonList,
+  PlanetList,
+  StarshipList,
+  PersonDetails,
+  PlanetDetails,
+  StarshipDetails
+} from '../sw-components';
 import './app.css';
 
 
@@ -70,19 +78,20 @@ export default class App extends Component {
     return (
       <ErrorBoundry>
         <div className="stardb-app">
-      <Header />
+          <Header />
 
-      <ItemList 
-        getData={getAllPeople}
-        onItemSelected ={() => {}} >
-          { ({name }) => <span>{name}</span> }
-        </ItemList>
+          <PersonDetails itemId={11} />
 
-        <ItemList 
-        getData={getAllPlanets}
-        onItemSelected ={() => {}} >
-          { ({name }) => <span>{name}</span> }
-        </ItemList>
+          <PlanetDetails itemId={5} />
+
+          <StarshipDetails itemId={9} />
+
+          <PersonList />
+           
+          <PlanetList />
+            
+          <StarshipList />
+          
         </div>
       </ErrorBoundry>
     );

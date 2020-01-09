@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import SwapiService from '../../services/swapi-service';
-import Spinner from '../spinner';
-import ErrorIndicator from '../error-indicator';
 import ErrorButton from "../error-button";
 
 import './item-details.css';
@@ -20,9 +17,7 @@ export { Record };
 
 export default class ItemDetails extends Component {
 
-  swapiService = new SwapiService();
-
-  state = {
+state = {
     item: null,
     image: null
   }
@@ -59,8 +54,7 @@ export default class ItemDetails extends Component {
     if (!item) {
       return <span>Select an item from a list</span>
     }
-    const { id, name, gender,
-      birthYear, eyeColor } = item;
+    const { name } = item;
 
     return (
       
