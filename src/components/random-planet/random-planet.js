@@ -6,6 +6,10 @@ import './random-planet.css';
 
 export default class RandomPlanet extends Component {
 
+    static defaultProps = {
+        updateInterval: 10000
+    };
+    
     swapiService = new SwapiService();
     state = {
         planet: {},
@@ -69,10 +73,6 @@ export default class RandomPlanet extends Component {
 
         );
     }
-
-    static defaultProps = {
-        updateInterval: 10000
-};
 }
 
 
